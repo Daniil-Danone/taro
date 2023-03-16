@@ -44,15 +44,3 @@ class ThemesByCourseIdAPIView(generics.ListAPIView):
 
     def get_queryset(self, *args, **kwargs):
         return Theme.objects.filter(course_id=self.kwargs["pk"])
-
-
-    # def get(self, request):
-    #     return Response({
-    #         "courses": ThemeSerializer(Theme.objects.all(), many=True).data
-    #     })
-    #
-    # def post(self, request):
-    #     serializer = ThemeSerializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save()
-    #     return Response(serializer.data)

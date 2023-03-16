@@ -47,29 +47,3 @@ class Theme(models.Model):
 
     def __str__(self):
         return f'ThemeID {self.id}: {self.title} | {self.isFree}'
-
-    # class Meta:
-    #     verbose_name = _('user')
-    #     verbose_name_plural = _('users')
-    #
-    # def get_full_name(self):
-    #     return u'%s %s' % (self.name, self.surname)
-    #
-    # def get_short_name(self):
-    #     return u'%s' % self.name
-    #
-    # def __unicode__(self):
-    #     return self.email
-    #
-    # def has_perm(self, perm, obj=None):
-    #     return True
-    #
-    # def has_module_perms(self, app_label):
-    #     return True
-    #
-    # def email_user(self, subject, message, from_email=None):
-    #     send_mail(subject, message, from_email, [self.email])
-    #
-    # @property
-    # def is_staff(self):
-    #     return self.is_admin
