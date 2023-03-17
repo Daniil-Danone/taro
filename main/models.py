@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_("email address"), unique=True)
+    email = models.EmailField(unique=True)
     name = models.CharField(max_length=100, blank=True, null=True)
     surname = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -21,7 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ("name", "surname", "role", "isAdmin", "imageUrl", "unableCourses",
-                       "created_at", "is_superuser", "is_staff", "is_active")
+                       "created_at", "is_superuser", "is_staff")
 
     def __str__(self):
         return f'UserID {self.id}: {self.name} {self.surname} | {self.email} | {self.role}'
